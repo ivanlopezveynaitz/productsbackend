@@ -56,6 +56,7 @@ export const register = async (req, res)=>{
             });        
         } else { //El back y front se encuentran en distintos servidores remotos
             res.cookie('token', token, {
+                httpOnly: false,
                 sameSite: 'none', //Para peticiones remotas
                 secure: true, //Para activar https en deployment
             });        
