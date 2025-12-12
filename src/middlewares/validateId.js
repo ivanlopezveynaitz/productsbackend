@@ -70,7 +70,6 @@ export const validateId = (req, res, next)=>{
         next();
         
     } catch (error) {
-        console.log(error);
         return res.status(400)
                   .json({ message: ['El ID no es un ObjectId válido']});
     }//Fin de catch
