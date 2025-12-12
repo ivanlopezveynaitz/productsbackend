@@ -33,7 +33,6 @@ router.put('/order/:id', validateId, authRequired, updateOrderStatus);
 //Obtener todas las ordenes para el administrador
 router.get('/order/', authRequired, isAdmin, getAllOrders);
 
-
 //Obtener una orden por id
 router.get('/order/:id', validateId, authRequired, getOrderById);
 

@@ -63,13 +63,14 @@ export const validateId = (req, res, next)=>{
             'cafebabecafebabecafebabe',  // "cafe babe"
             'badc0ffebadc0ffebadc0ffe',  // "bad coffee"
         ];
-        if (reservedOrSuspiciousObjectIds.includes(trimmedId.toLowerCase())) 
+        if (reservedOrSuspiciousObjectIds.includes(cleanId.toLowerCase())) 
             return res.status(400)
                       .json({ message: ['Error ID reservado']});
 
         next();
         
     } catch (error) {
+        console.log(error);
         return res.status(400)
                   .json({ message: ['El ID no es un ObjectId válido']});
     }//Fin de catch
